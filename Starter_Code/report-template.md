@@ -2,26 +2,24 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+The purpose of this anaylsis is to see which models would best determine wether a loan is healthy or high-risk based on certain parameters given. It's important to know wether or not a loan is healthy or not so that the company that issued the loan can know wether or not the person or entity that took out the loan will pay it back or not. The parameters the model used was the size of the loan, interest rate, income of the borrower, debt to income of the borrower, number of accounts the borrower has, any sort of derogatory marks, and total debt. An issue with using this data is that almost 97% of the loans are healhty loans, so it's difficult to determine unhealhty loans when there is only a little over 3% of the data with unhealhty loans. I used a number of different models to determine which model would turn out the best. I started with a logistic regression model that turned out great, but wanted to continue to see if there were any other models that could perform better. I used the random forest classifier, K Neighbors classifier, Ada boost classifier, and gradient boosting classifier to test out a number of different types of models.
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
 
 ## Results
 
 Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+* Logistic Regression:
+    * The logistic regression had one of the better results with a precision score of 1, recall of 0.99, and a f1 of 1 when determining healthy loans. It had a precision score of 0.85, a recall of 0.98 and a f1 of 0.91 when determing a unhealthy loan.
+* Random Forest Classifier:
+    * The Random Forest Classifier had the worst results with a precision score of 1, recall of 1, and a f1 of 1 when determining healthy loans; however, it also had a precision score of 0.88, a recall of 0.87 and a f1 of 0.87 when determing a unhealthy loan.
+* K Neighbors Classifier:
+    * The K Neighbors Classifier had a great result with a precision score of 1, recall of 1, and a f1 of 1 when determining healthy loans. It had a precision score of 0.87, a recall of 0.99 and a f1 of 0.93 when determing a unhealthy loan.
+* Ada Boost Classifier:
+    * The Ada Boost Classifier also had one of the better results with a precision score of 1, recall of 1, and a f1 of 1 when determining healthy loans. It had a precision score of 0.87, a recall of 0.99 and a f1 of 0.93 when determing a unhealthy loan.
+* Gradient Boosting Classifier:
+    * The Gradient Boosting Classifier also had one of the better results with a precision score of 1, recall of 1, and a f1 of 1 when determining healthy loans. It had a precision score of 0.87, a recall of 0.99 and a f1 of 0.93 when determing a unhealthy loan. However it had 1 more false negative and false positive compared to Ada Boost Classifier.
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+In summary these models as a whole did really well all together, but there are a few that are better than the rest. The two best models would be AdaBoostClassifier and GradientBoostingClassifer with AdaBoost beating it out by just 1 false negative and false positive. In this scenario you want the least amount of false negatives because you don't want a predicted healhty loan to turn out to be a unhelahty loan. It's much better for a predicted unhealhty loan to turn out to be a healhty loan. It is clear that these are the two best models because they have the best precision and recall score than the reest of the models. 
